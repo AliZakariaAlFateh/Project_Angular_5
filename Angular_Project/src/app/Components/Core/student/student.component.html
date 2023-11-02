@@ -1,0 +1,29 @@
+<div class="m-2">
+  <button class="btn btn-primary" [routerLink]="['/student/add']"> Add Student</button>
+</div>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Age</th>
+        <th scope="col">School</th>
+        <th scope="col">Address</th>
+        <th scope="col">Details</th>
+        <th scope="col">Update</th>
+        <th scope="col">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let Std of students ; let i=index">
+        <th scope="row">{{i+1}}</th>
+        <td>{{Std.name}}</td>
+        <td>{{Std.age}}</td>
+        <td>{{Std.school}}</td>
+        <td>{{Std.address}}</td>
+        <td> <i class="bi text-primary fs-4 bi-info-circle"[routerLink]="['/student/details',Std.id]"></i></td>
+        <td> <i class="bi text-warning fs-4 bi-pencil-square" [routerLink]="['/student','edit',Std.id]"></i></td>
+        <td> <i class="bi text-danger fs-4 bi-trash red" (click)="Delete(Std.id)"></i></td>
+      </tr>
+    </tbody>
+  </table>

@@ -1,0 +1,8 @@
+.content{
+    background-color: rgba(73, 73, 164, 0.2);
+}
+.classBorder{
+    border-color: blue;
+    border-radius: 3%;
+    border-style: double;
+}
